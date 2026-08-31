@@ -1,0 +1,426 @@
+/* ============================================================================
+   RESPONSIVE — Tablet and mobile adjustments
+   The layout re-composes rather than shrinking. Editorial rhythm is preserved.
+   ============================================================================ */
+
+/* ---------- LARGE TABLET / SMALL DESKTOP (≤1100px) ---------- */
+@media (max-width: 1100px) {
+  :root {
+    --space-3xl: 6rem;
+    --space-2xl: 4.5rem;
+    --space-xl: 3rem;
+  }
+
+  .hero__grid {
+    grid-template-columns: 3fr 5fr;
+    grid-template-areas:
+      'rail main'
+      'figure figure'
+      'foot foot';
+    row-gap: var(--space-xl);
+  }
+
+  .hero__rail {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    border-right: none;
+    border-bottom: 1px solid var(--rule-soft);
+    padding-right: 0;
+    padding-bottom: var(--space-md);
+  }
+
+  .rail__block {
+    flex: 1 1 40%;
+  }
+
+  .hero__image-wrap {
+    aspect-ratio: 16 / 9;
+  }
+
+  .about__grid {
+    grid-template-columns: 5fr 4fr;
+  }
+
+  .about__dossier {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- TABLET (≤900px) ---------- */
+@media (max-width: 900px) {
+  :root {
+    --space-3xl: 5rem;
+    --space-2xl: 4rem;
+    --space-xl: 2.5rem;
+    --space-lg: 2rem;
+  }
+
+  /* --- Nav: hide inline list, show hamburger --- */
+  .nav__list {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .masthead__dateline {
+    padding: 0.5rem 1.25rem;
+  }
+
+  .dateline__item--center {
+    display: none;
+  }
+
+  .nameplate__title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .masthead__nav {
+    padding: 0.75rem var(--gutter);
+    min-height: 3rem;
+  }
+
+  /* --- Hero --- */
+  .hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'main'
+      'figure'
+      'rail'
+      'foot';
+    row-gap: var(--space-xl);
+  }
+
+  .hero__rail {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    border-right: none;
+    border-top: 1px solid var(--rule-soft);
+    padding-right: 0;
+    padding-top: var(--space-md);
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .rail__block {
+    flex: 1 1 45%;
+  }
+
+  .hero__title-line--indent {
+    padding-left: 1.5ch;
+  }
+
+  .hero__image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero__foot {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 1rem;
+  }
+
+  .foot__item:nth-child(3) {
+    border-right: none;
+  }
+
+  /* --- About --- */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .about__dossier {
+    grid-column: auto;
+  }
+
+  /* --- Experience --- */
+  .job {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .job__header {
+    position: static;
+  }
+
+  .job__num {
+    font-size: 4rem;
+  }
+
+  /* --- Projects --- */
+  .project,
+  .project--reverse {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .project--reverse .project__figure {
+    order: 1;
+  }
+
+  .project--reverse .project__content {
+    order: 2;
+  }
+
+  /* --- Skills --- */
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Achievements --- */
+  .achievements__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement {
+    border-right: none;
+    border-bottom: 1px solid rgba(245, 245, 240, 0.2);
+    min-height: auto;
+    padding: var(--space-lg) 0;
+  }
+
+  .achievement:last-child {
+    border-bottom: none;
+  }
+
+  /* --- Certs --- */
+  .certs__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .cert {
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .cert:last-child {
+    border-bottom: none;
+  }
+
+  /* --- Contact --- */
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .contact__cta-wrap {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--rule-soft);
+    padding-bottom: var(--space-xl);
+  }
+
+  /* --- Footer --- */
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- MOBILE (≤600px) ---------- */
+@media (max-width: 600px) {
+  :root {
+    --gutter: 1.25rem;
+    --space-3xl: 4rem;
+    --space-2xl: 3rem;
+    --space-xl: 2rem;
+    --space-lg: 1.5rem;
+    --fs-body: 1rem;
+  }
+
+  section {
+    padding: var(--space-2xl) 0;
+  }
+
+  /* --- Masthead --- */
+  .masthead__dateline {
+    font-size: 0.6rem;
+    padding: 0.4rem var(--gutter);
+  }
+
+  .masthead__nameplate {
+    padding: 1rem var(--gutter) 0.75rem;
+  }
+
+  .nameplate__title {
+    font-size: 2.25rem;
+    letter-spacing: -0.025em;
+  }
+
+  .nameplate__sub {
+    font-size: 0.85rem;
+  }
+
+  /* --- Section headers --- */
+  .section__title {
+    max-width: none;
+  }
+
+  .section__label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    padding-top: var(--space-lg);
+  }
+
+  .hero__title {
+    letter-spacing: -0.035em;
+  }
+
+  .hero__lede {
+    font-size: 1.0625rem;
+  }
+
+  .hero__dropcap {
+    font-size: 3.5rem;
+    padding-right: 0.4rem;
+  }
+
+  .hero__byline {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .rail__block {
+    flex: 1 1 100%;
+  }
+
+  .hero__foot {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .foot__item:nth-child(2n) {
+    border-right: none;
+  }
+
+  .foot__item:nth-child(3) {
+    border-right: 1px solid var(--rule-soft);
+  }
+
+  .foot__item:nth-child(5) {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+
+  /* --- Job --- */
+  .job__num {
+    font-size: 3rem;
+  }
+
+  .job__dispatch {
+    font-size: 1.125rem;
+  }
+
+  .job__item {
+    grid-template-columns: 2rem 1fr;
+    gap: 0.75rem;
+  }
+
+  /* --- Projects --- */
+  .project__title-main {
+    font-size: 2rem;
+  }
+
+  .project__title-sub {
+    font-size: 1.5rem;
+    padding-left: 1ch;
+  }
+
+  .project__dispatch {
+    font-size: 1.0625rem;
+  }
+
+  .project__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project__btn {
+    justify-content: space-between;
+  }
+
+  /* --- Skills --- */
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-group {
+    min-height: auto;
+    padding: var(--space-md);
+  }
+
+  /* --- Achievements --- */
+  .achievement__stat {
+    font-size: 2.75rem;
+  }
+
+  /* --- Contact --- */
+  .contact__cta {
+    padding: var(--space-md);
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  .contact__socials {
+    gap: 0.75rem;
+  }
+
+  .contact__social {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.75rem;
+  }
+
+  /* --- Footer --- */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .footer__base {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.65rem;
+  }
+
+  /* --- Mobile menu --- */
+  .mobile-menu__link {
+    font-size: 1.75rem;
+  }
+}
+
+/* ---------- VERY SMALL (≤380px) ---------- */
+@media (max-width: 380px) {
+  .nameplate__title {
+    font-size: 1.85rem;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .section__title {
+    font-size: 2.25rem;
+  }
+
+  .project__title-main {
+    font-size: 1.75rem;
+  }
+
+  .project__title-sub {
+    font-size: 1.35rem;
+  }
+}

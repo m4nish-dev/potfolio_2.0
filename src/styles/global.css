@@ -1,0 +1,316 @@
+/* ============================================================================
+   GLOBAL — Design system, tokens, reset, base typography
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* --- Palette (monochrome editorial) --- */
+  --black: #0a0a0a;
+  --ink: #111111;
+  --graphite: #1a1a1a;
+  --slate: #444444;
+  --gray: #777777;
+  --silver: #b8b8b8;
+  --bone: #e6e4dc;
+  --paper: #f5f5f0;
+  --paper-soft: #efeee8;
+  --white: #ffffff;
+
+  /* --- Semantic --- */
+  --bg: var(--paper);
+  --bg-alt: var(--paper-soft);
+  --fg: var(--ink);
+  --fg-muted: var(--slate);
+  --fg-soft: var(--gray);
+  --rule: var(--ink);
+  --rule-soft: rgba(17, 17, 17, 0.14);
+  --rule-hair: rgba(17, 17, 17, 0.08);
+
+  /* --- Typography --- */
+  --serif: 'Playfair Display', 'Times New Roman', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* --- Scale --- */
+  --fs-mega: clamp(4rem, 12vw, 10.5rem);
+  --fs-display: clamp(2.75rem, 7vw, 6rem);
+  --fs-h1: clamp(2rem, 4.5vw, 3.75rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.25rem);
+  --fs-h3: clamp(1.125rem, 1.6vw, 1.375rem);
+  --fs-body: 1.0625rem;
+  --fs-body-sm: 0.9375rem;
+  --fs-small: 0.8125rem;
+  --fs-xs: 0.6875rem;
+  --fs-micro: 0.625rem;
+
+  /* --- Spacing --- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* --- Layout --- */
+  --content-max: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 200ms;
+  --dur: 400ms;
+  --dur-slow: 700ms;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--fg);
+  background-color: var(--bg);
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+em {
+  font-style: italic;
+  font-family: var(--serif);
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* ---------- App shell ---------- */
+.app {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-top: 0;
+}
+
+/* ---------- Container ---------- */
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* ============================================================================
+   Shared section header — used by every section below the hero
+   ============================================================================ */
+.section__header {
+  max-width: var(--content-max);
+  margin: 0 auto var(--space-xl);
+  padding: 0 var(--gutter);
+  border-top: 1px solid var(--rule);
+  padding-top: var(--space-md);
+}
+
+.section__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: var(--space-lg);
+  font-weight: 500;
+}
+
+.section__label-mark {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.section__label-mark::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--ink);
+  border-radius: 50%;
+}
+
+.section__label-num {
+  font-family: var(--mono);
+  color: var(--fg-soft);
+}
+
+.section__title {
+  font-family: var(--serif);
+  font-size: var(--fs-display);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: var(--space-md);
+  max-width: 20ch;
+}
+
+.section__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--slate);
+}
+
+.section__standfirst {
+  font-family: var(--serif);
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--slate);
+  max-width: 55ch;
+  font-weight: 400;
+}
+
+/* ============================================================================
+   Sections spacing
+   ============================================================================ */
+section {
+  padding: var(--space-3xl) 0;
+  position: relative;
+}
+
+section:first-of-type {
+  padding-top: 0;
+}
+
+/* ============================================================================
+   Fallback graphics for missing images (shared)
+   ============================================================================ */
+.fallback__grid,
+.fallback__initials,
+.fallback__sub,
+.fallback__mark,
+.fallback__line {
+  color: var(--paper);
+}
+
+/* ============================================================================
+   Entrance animation — a single subtle reveal, no per-element noise
+   ============================================================================ */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero__title-line,
+.hero__lede,
+.hero__byline,
+.hero__eyebrow,
+.hero__figure,
+.rail__block {
+  opacity: 0;
+  animation: rise 900ms var(--ease-out) forwards;
+}
+
+.hero__eyebrow { animation-delay: 50ms; }
+.hero__title-line:nth-child(1) { animation-delay: 150ms; }
+.hero__title-line:nth-child(2) { animation-delay: 250ms; }
+.hero__lede { animation-delay: 400ms; }
+.hero__byline { animation-delay: 550ms; }
+.hero__figure { animation-delay: 300ms; }
+.rail__block:nth-child(1) { animation-delay: 200ms; }
+.rail__block:nth-child(2) { animation-delay: 260ms; }
+.rail__block:nth-child(3) { animation-delay: 320ms; }
+.rail__block:nth-child(4) { animation-delay: 380ms; }
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero__title-line,
+  .hero__lede,
+  .hero__byline,
+  .hero__eyebrow,
+  .hero__figure,
+  .rail__block {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}

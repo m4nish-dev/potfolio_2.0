@@ -172,7 +172,7 @@ export const CERTIFICATIONS = [
 ];
 
 export const CONTACT = {
-  email: 'manish.kumar.ug23@nsut.ac.in',
+  email: 'manishkr28092003@gmail.com',
   phone: '+91-9334418671',
   phoneRaw: '+919334418671',
   location: 'Delhi, India'

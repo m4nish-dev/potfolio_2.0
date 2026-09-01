@@ -17,11 +17,7 @@ function Projects() {
           {project1 && (
             <div className="project-block project-60">
               <div className="project-image-wrapper">
-                <img 
-                  src={project1.image} 
-                  alt={project1.title} 
-                  className="project-image"
-                />
+                <div className="project-image-empty"></div>
               </div>
               <h3 className="project-headline">
                 {project1.title.toUpperCase()}: {project1.subtitle.replace('\n', ' ').toUpperCase()}
@@ -42,12 +38,7 @@ function Projects() {
           {project2 && (
             <div className="project-block project-40">
               <div className="project-image-wrapper">
-                <img 
-                  src={project2.image} 
-                  alt={project2.title} 
-                  className="project-image"
-                  style={{ aspectRatio: '3/4' }} /* Making the second image taller and narrower for layout fit */
-                />
+                <div className="project-image-empty" style={{ aspectRatio: '3/4' }}></div>
               </div>
               <h4 className="project-sub-headline">
                 {project2.title.toUpperCase()}:<br/>

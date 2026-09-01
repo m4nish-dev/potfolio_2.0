@@ -39,7 +39,7 @@ function Experience() {
                   <span className="cert-label">CERTIFICATE OF EXPERIENCE</span>
                   <div className="cert-embed-container">
                     <embed 
-                      src="/docs/experience_certificate.pdf" 
+                      src="/docs/experience_certificate.pdf#toolbar=0&navpanes=0&scrollbar=0" 
                       type="application/pdf" 
                       className="cert-pdf-viewer"
                     />

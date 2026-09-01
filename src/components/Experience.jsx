@@ -16,7 +16,9 @@ function Experience() {
                 <h3 className="job-role">{job.role}</h3>
                 <span className="job-company">{job.company}</span>
               </div>
-              <p className="job-period-dept">{job.period} &bull; {job.department}</p>
+              <p className="job-period-dept">
+                <span className="job-dates">JULY &mdash; AUGUST</span> &bull; {job.department}
+              </p>
               
               <p className="job-dispatch">{job.dispatch}</p>
 
@@ -25,6 +27,11 @@ function Experience() {
                   <li key={i}>{line}</li>
                 ))}
               </ul>
+              
+              <div className="certificate-placeholder">
+                <span className="cert-label">INTERNSHIP CERTIFICATE</span>
+                <span className="cert-instruction">[ Insert Verified Certificate Here ]</span>
+              </div>
             </article>
           ))}
         </div>

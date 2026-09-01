@@ -29,10 +29,10 @@
 
 .job-company {
   font-family: var(--sans);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--dark-gray);
+  color: var(--black);
 }
 
 .job-period-dept {
@@ -42,6 +42,16 @@
   margin-bottom: 1rem;
   border-bottom: 1px dashed var(--gray);
   padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.job-dates {
+  font-weight: 700;
+  color: var(--black);
+  background-color: var(--light-gray);
+  padding: 0.1rem 0.4rem;
 }
 
 .job-dispatch {
@@ -60,4 +70,38 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.certificate-placeholder {
+  width: 100%;
+  max-width: 400px;
+  height: 120px;
+  border: 2px dashed var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #fafafa;
+  transition: background-color 0.2s;
+}
+
+.certificate-placeholder:hover {
+  background-color: var(--light-gray);
+  cursor: pointer;
+}
+
+.cert-label {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.cert-instruction {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--gray);
 }

@@ -15,6 +15,11 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+
+        {/* Experience Section - Spans Full Width */}
+        <div className="full-width-section">
+          <Experience />
+        </div>
         
         {/* Newspaper Spread: Left and Right Columns */}
         <div className="split-grid">
@@ -29,17 +34,21 @@ function App() {
           </div>
         </div>
 
-        {/* Second Spread */}
+        {/* Skills Section - Full Width to balance layout */}
+        <div className="full-width-section" style={{ borderTop: 'var(--border-thin)', borderBottom: 'var(--border-thin)' }}>
+          <Skills />
+        </div>
+
+        {/* Final Spread */}
         <div className="split-grid">
-          <div className="left-column" style={{ borderRight: '1px solid var(--black)' }}>
-             <Experience />
+          <div className="left-column">
              <div style={{ padding: '0 1.5rem 1.5rem 1.5rem' }}>
                 <Achievements />
              </div>
           </div>
+          
           <div className="right-column">
-            <Skills />
-            <Certifications />
+             <Certifications />
           </div>
         </div>
 

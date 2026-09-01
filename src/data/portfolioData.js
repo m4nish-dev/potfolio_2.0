@@ -65,33 +65,40 @@ export const EXPERIENCE = [
 export const PROJECTS = [
   {
     number: '01',
-    title: 'Homely',
-    subtitle: 'A Premium\nBooking Platform',
-    kicker: 'FULL-STACK / MERN',
+    title: 'AILifeOS',
+    subtitle: 'The Ultimate\nOperating System',
+    kicker: 'AI / FULL-STACK',
     dispatch:
-      'A complete property booking experience built on the MERN stack. Twenty-plus components compose a fluid interface backed by authenticated REST APIs, a responsive layout system, and a mobile-first booking flow that keeps the user in flow from search to confirmation.',
-    stack: ['MongoDB', 'Express', 'React', 'Node.js', 'REST APIs', 'JWT Auth'],
-    // Replace with a real image at public/images/homely.jpg
-    image: '/images/homely.jpg',
-    imageAlt: 'Homely booking platform interface',
-    // TODO: Replace with your actual project URLs
-    liveUrl: 'YOUR_HOMELY_LIVE_URL',
-    codeUrl: 'YOUR_HOMELY_GITHUB_URL'
+      'An advanced AI-driven life operating system designed to streamline workflows, manage data, and automate daily tasks using intelligent agents and large language models.',
+    features: [
+      'Multi-agent workflow orchestration using LLMs',
+      'Real-time data synchronization and persistence',
+      'Customized dashboard with dynamic widgets',
+      'Secure, role-based access and authentication'
+    ],
+    stack: ['React', 'Node.js', 'LLMs', 'MongoDB', 'AI Agents'],
+    image: '/images/hero_tech.jpg', // Placeholder since there is no specific AILifeOS image yet
+    imageAlt: 'AILifeOS Interface',
+    liveUrl: '#',
+    codeUrl: '#'
   },
   {
     number: '02',
-    title: 'URLShortify',
-    subtitle: 'The Analytics\nEdge',
-    kicker: 'BACKEND / ANALYTICS',
+    title: 'Homily',
+    subtitle: 'A Premium\nBooking Platform',
+    kicker: 'FULL-STACK / MERN',
     dispatch:
-      'A URL shortening and analytics service designed for speed at scale. Concise URL generation, click tracking, link management, and per-user rate limiting — all served through a lean Express API with MongoDB persistence.',
-    stack: ['Node.js', 'Express', 'MongoDB', 'REST APIs', 'JWT Auth', 'Rate Limiting'],
-    // Replace with a real image at public/images/urlshortify.jpg
-    image: '/images/urlshortify.jpg',
-    imageAlt: 'URLShortify analytics dashboard',
-    // TODO: Replace with your actual project URLs
-    liveUrl: 'YOUR_URLSHORTIFY_LIVE_URL',
-    codeUrl: 'YOUR_URLSHORTIFY_GITHUB_URL'
+      'A complete property booking experience built on the MERN stack. A fluid interface backed by authenticated REST APIs and a responsive layout system.',
+    features: [
+      'End-to-end property search and booking engine',
+      'Secure payment gateway integration',
+      'Responsive, mobile-first design system'
+    ],
+    stack: ['MongoDB', 'Express', 'React', 'Node.js'],
+    image: '/images/homely.jpg',
+    imageAlt: 'Homily booking platform interface',
+    liveUrl: '#',
+    codeUrl: '#'
   }
 ];
 

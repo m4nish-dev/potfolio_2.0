@@ -14,25 +14,19 @@ function About() {
           <div className="edu-primary-block">
             <div className="article-image-container">
               <img 
-                src="/images/nsut.jpg" 
+                src="/images/nsut_building.jpg" 
                 alt="NSUT Campus" 
                 className="article-image"
-                onError={(e) => {
-                  e.target.src = 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=2070';
-                }}
               />
               <div className="image-caption">NSUT</div>
             </div>
             
             <div className="edu-text">
               <h3 className="edu-title">
-                <FaGraduationCap className="edu-icon" /> 
+                <img src="/images/nsut_logo.png" alt="NSUT Logo" className="edu-logo-inline" /> 
                 Netaji Subhas University of Technology
               </h3>
               <p className="edu-meta">B.Tech in CSDA &bull; Delhi</p>
-              <p className="article-paragraph">
-                A premier tech institution known for rigorous engineering education and competitive environment. Laying the foundation for analytical thinking, systems design, and problem-solving skills essential for software engineering.
-              </p>
             </div>
           </div>
 
@@ -43,12 +37,18 @@ function About() {
             <h4 className="edu-subtitle">Prior Schooling</h4>
             
             <div className="school-item">
-              <div className="school-logo">
-                <FaSchool />
-              </div>
+              <img src="/images/st_karens_logo.png" alt="St. Karen's Logo" className="school-logo-img" />
               <div className="school-details">
                 <span className="school-name">St. Karen's High School</span>
-                <span className="school-meta">Science & Mathematics Focus</span>
+                <span className="school-meta">Class 12th (Senior Secondary) &bull; Science Focus</span>
+              </div>
+            </div>
+
+            <div className="school-item">
+              <img src="/images/st_karens_logo.png" alt="St. Karen's Logo" className="school-logo-img" />
+              <div className="school-details">
+                <span className="school-name">St. Karen's High School</span>
+                <span className="school-meta">Class 10th (Secondary)</span>
               </div>
             </div>
           </div>

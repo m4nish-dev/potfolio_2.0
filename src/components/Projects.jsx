@@ -12,46 +12,59 @@ function Projects() {
         <span className="section-header">PORTFOLIO HIGHLIGHTS</span>
         <h2 className="section-title">PROJECT FOCUS</h2>
 
-        {/* First Project: Homely (Large display) */}
-        {project1 && (
-          <div className="project-card large-project">
-            <div className="project-image-wrapper">
-              <img 
-                src={project1.image} 
-                alt={project1.title} 
-                className="project-image"
-                onError={(e) => {
-                  e.target.src = 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=2070';
-                }}
-              />
-            </div>
-            <h3 className="project-headline">
-              {project1.title.toUpperCase()}: {project1.subtitle.replace('\n', ' ').toUpperCase()}
-            </h3>
-            <p className="project-description">{project1.dispatch}</p>
-          </div>
-        )}
-
-        <hr className="newspaper-divider" />
-
-        {/* Second Project: URLShortify (Small display) */}
-        {project2 && (
-          <div className="project-card small-project">
-            <div className="small-project-inner">
-              <div className="project-graphic-placeholder">
-                <span>&lt;/&gt;</span>
-                <div className="arrow-box">short URL</div>
+        <div className="projects-split-container">
+          {/* First Project: AILifeOS (60%) */}
+          {project1 && (
+            <div className="project-block project-60">
+              <div className="project-image-wrapper">
+                <img 
+                  src={project1.image} 
+                  alt={project1.title} 
+                  className="project-image"
+                />
               </div>
-              <div className="small-project-text">
-                <h4 className="project-sub-headline">
-                  {project2.title.toUpperCase()}:<br/>
-                  {project2.subtitle.replace('\n', ' ').toUpperCase()}
-                </h4>
-                <p className="project-description">{project2.dispatch}</p>
-              </div>
+              <h3 className="project-headline">
+                {project1.title.toUpperCase()}: {project1.subtitle.replace('\n', ' ').toUpperCase()}
+              </h3>
+              <p className="project-description">{project1.dispatch}</p>
+              
+              {project1.features && (
+                <ul className="project-features-list">
+                  {project1.features.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+              )}
             </div>
-          </div>
-        )}
+          )}
+
+          {/* Second Project: Homily (40%) */}
+          {project2 && (
+            <div className="project-block project-40">
+              <div className="project-image-wrapper">
+                <img 
+                  src={project2.image} 
+                  alt={project2.title} 
+                  className="project-image"
+                  style={{ aspectRatio: '3/4' }} /* Making the second image taller and narrower for layout fit */
+                />
+              </div>
+              <h4 className="project-sub-headline">
+                {project2.title.toUpperCase()}:<br/>
+                {project2.subtitle.replace('\n', ' ').toUpperCase()}
+              </h4>
+              <p className="project-description">{project2.dispatch}</p>
+
+              {project2.features && (
+                <ul className="project-features-list">
+                  {project2.features.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

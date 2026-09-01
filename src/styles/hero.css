@@ -10,30 +10,38 @@
   width: 100%;
   min-height: 80vh;
   display: flex;
+  background-color: var(--white);
 }
 
 .hero-image-editorial {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  left: auto;
+  width: 72%; /* Fine-tuned midpoint between 65% and 80% */
   height: 100%;
   object-fit: cover;
+  object-position: 60% 15%; /* Fine-tuned framing midpoint */
   z-index: 1;
+  filter: grayscale(100%) brightness(0.5) contrast(1.2); 
 }
 
+/* 
+  Creating a perfect gradient mask: 
+  Solid white on the left (where the text is), fading perfectly into the darker right side.
+*/
 .hero-overlay {
   position: relative;
   z-index: 2;
   width: 100%;
-  background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,0) 80%);
   display: flex;
   align-items: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero-overlay {
-    background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 70%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0) 100%);
     align-items: flex-end;
   }
 }
@@ -88,10 +96,6 @@
   line-height: 1.1;
   font-weight: normal;
   margin-bottom: 0.5rem;
-}
-
-.hero-name-highlight {
-  font-weight: 700;
 }
 
 .hero-tagline {

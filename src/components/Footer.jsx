@@ -7,26 +7,22 @@ function Footer() {
   return (
     <footer id="contact" className="magazine-footer">
       <div className="footer-left">
-        <h2 className="footer-title">FULL CONTACT</h2>
-        <span className="footer-subtitle">MAGAZINE BACK SECTION</span>
+        <span className="footer-title">GET IN TOUCH</span>
+        <a href={`mailto:${CONTACT.email}`} className="footer-huge-text">
+          {CONTACT.email}
+        </a>
       </div>
       
       <div className="footer-middle">
-        <div className="contact-item">
-          <FaEnvelope /> <span>{CONTACT.email}</span>
-        </div>
-        <div className="contact-item">
-          <FaPhone /> <span>{CONTACT.phone}</span>
-        </div>
-      </div>
-
-      <div className="footer-social">
-        <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
-        <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+        <span className="footer-label">SOCIAL</span>
+        <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="footer-link">GitHub</a>
+        <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="footer-link">LinkedIn</a>
       </div>
 
       <div className="footer-right">
-        <button className="get-in-touch-btn">GET IN TOUCH</button>
+        <span className="footer-label">LOCATION</span>
+        <span className="footer-text">{CONTACT.location}</span>
+        <span className="footer-text">{CONTACT.phone}</span>
       </div>
     </footer>
   );

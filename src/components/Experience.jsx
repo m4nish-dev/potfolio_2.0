@@ -12,26 +12,42 @@ function Experience() {
         <div className="experience-list">
           {EXPERIENCE.map((job) => (
             <article key={job.number} className="job-card">
-              <div className="job-header">
-                <h3 className="job-role">{job.role}</h3>
-                <span className="job-company">{job.company}</span>
-              </div>
-              <p className="job-period-dept">
-                <span className="job-dates">JULY &mdash; AUGUST</span> &bull; {job.department}
-              </p>
               
-              <p className="job-dispatch">{job.dispatch}</p>
+              <div className="job-content-split">
+                <div className="job-text-side">
+                  <div className="job-header">
+                    <h3 className="job-role">{job.role}</h3>
+                    <div className="job-company-block">
+                      <img src="/images/encore_logo.png" alt="Encore Ascend" className="company-logo" />
+                      <span className="job-company">{job.company}</span>
+                    </div>
+                  </div>
+                  <p className="job-period-dept">
+                    <span className="job-dates">JULY &mdash; AUGUST</span> &bull; {job.department}
+                  </p>
+                  
+                  <p className="job-dispatch">{job.dispatch}</p>
 
-              <ul className="job-achievements">
-                {job.achievements.map((line, i) => (
-                  <li key={i}>{line}</li>
-                ))}
-              </ul>
-              
-              <div className="certificate-placeholder">
-                <span className="cert-label">INTERNSHIP CERTIFICATE</span>
-                <span className="cert-instruction">[ Insert Verified Certificate Here ]</span>
+                  <ul className="job-achievements">
+                    {job.achievements.map((line, i) => (
+                      <li key={i}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="job-cert-side">
+                  <span className="cert-label">CERTIFICATE OF EXPERIENCE</span>
+                  <div className="cert-embed-container">
+                    <embed 
+                      src="/docs/experience_certificate.pdf" 
+                      type="application/pdf" 
+                      className="cert-pdf-viewer"
+                    />
+                  </div>
+                  <a href="/docs/experience_certificate.pdf" target="_blank" rel="noreferrer" className="cert-download-btn">Open Certificate Fullscreen</a>
+                </div>
               </div>
+
             </article>
           ))}
         </div>

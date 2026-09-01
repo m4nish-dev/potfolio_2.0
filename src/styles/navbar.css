@@ -1,267 +1,85 @@
-/* ============================================================================
-   MASTHEAD — the newspaper front nameplate
-   ============================================================================ */
-.masthead {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--bg);
-  transition: box-shadow var(--dur) var(--ease),
-              padding var(--dur) var(--ease);
-}
+/* navbar.css */
 
-.masthead--compact {
-  box-shadow: 0 1px 0 var(--rule);
-}
-
-.masthead--compact .masthead__dateline,
-.masthead--compact .masthead__nameplate {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  padding: 0;
-  border: none;
-  margin: 0;
-}
-
-/* --- Dateline strip (top thin bar) --- */
-.masthead__dateline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem var(--gutter);
-  border-bottom: 1px solid var(--rule);
-  font-family: var(--sans);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  max-height: 100px;
-  transition: max-height var(--dur) var(--ease),
-              opacity var(--dur) var(--ease),
-              padding var(--dur) var(--ease);
-}
-
-.dateline__item {
-  flex: 1;
-}
-
-.dateline__item--center {
-  text-align: center;
-  color: var(--ink);
-}
-
-.dateline__item--right {
-  text-align: right;
-}
-
-/* --- Nameplate (big title) --- */
-.masthead__nameplate {
-  padding: var(--space-md) var(--gutter) var(--space-sm);
-  border-bottom: 1px solid var(--rule);
-  text-align: center;
-  max-height: 400px;
-  transition: max-height var(--dur) var(--ease),
-              opacity var(--dur) var(--ease),
-              padding var(--dur) var(--ease);
-}
-
-.nameplate__link {
-  display: inline-block;
-  transition: opacity var(--dur) var(--ease);
-}
-
-.nameplate__link:hover {
-  opacity: 0.7;
-}
-
-.nameplate__title {
-  display: block;
-  font-family: var(--serif);
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: var(--ink);
-}
-
-.nameplate__sub {
-  display: inline-block;
-  margin-top: 0.35rem;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
-  color: var(--slate);
-  letter-spacing: 0.02em;
-}
-
-/* --- Navigation strip --- */
-.masthead__nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.85rem var(--gutter);
-  border-bottom: 1px solid var(--rule);
-  background: var(--bg);
-  position: relative;
-}
-
-.nav__list {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-}
-
-.nav__item {
-  position: relative;
-}
-
-.nav__link {
-  font-family: var(--sans);
-  font-size: var(--fs-small);
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  padding: 0.4rem 0;
-  position: relative;
-  transition: color var(--dur-fast) var(--ease);
-  display: inline-block;
-}
-
-.nav__link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.navbar-container {
   width: 100%;
-  height: 1px;
-  background: var(--ink);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform var(--dur) var(--ease-out);
-}
-
-.nav__link:hover {
-  color: var(--ink);
-}
-
-.nav__link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.nav__link--active {
-  color: var(--ink);
-}
-
-.nav__link--active::after {
-  transform: scaleX(1);
-}
-
-/* --- Mobile hamburger --- */
-.nav__toggle {
-  display: none;
-  position: absolute;
-  right: var(--gutter);
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2.5rem;
-  height: 2.5rem;
+  display: flex;
   flex-direction: column;
+}
+
+/* Top Nav Strip */
+.nav-strip {
+  background-color: var(--bg);
+  border-bottom: var(--border-thin);
+  border-top: var(--border-thin);
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  z-index: 110;
 }
 
-.nav__toggle-bar {
-  display: block;
-  width: 1.5rem;
-  height: 1px;
-  background: var(--ink);
-  transition: transform var(--dur) var(--ease),
-              opacity var(--dur) var(--ease);
-}
-
-.nav__toggle--open .nav__toggle-bar:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-.nav__toggle--open .nav__toggle-bar:nth-child(2) {
-  opacity: 0;
-}
-.nav__toggle--open .nav__toggle-bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* --- Mobile menu overlay --- */
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  background: var(--bg);
-  z-index: 105;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--dur) var(--ease);
-  overflow-y: auto;
-}
-
-.mobile-menu--open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.mobile-menu__inner {
-  padding: 8rem var(--gutter) 3rem;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-menu__label {
-  font-family: var(--sans);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--fg-soft);
-  margin-bottom: var(--space-lg);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--rule);
-}
-
-.mobile-menu__list {
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-menu__item {
-  border-bottom: 1px solid var(--rule-soft);
-}
-
-.mobile-menu__link {
-  display: flex;
-  align-items: baseline;
-  gap: 1.5rem;
-  padding: 1.25rem 0;
+.nav-item {
   font-family: var(--serif);
-  font-size: 2.25rem;
-  font-weight: 500;
-  color: var(--ink);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.nav-item a {
+  padding: 0 1rem;
+  display: inline-block;
+}
+
+.nav-item:not(:last-child) {
+  border-right: 1px solid var(--gray);
+}
+
+.nav-item:hover a {
+  text-decoration: underline;
+}
+
+/* Main Title Area */
+.title-area {
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+  border-bottom: var(--border-thin);
+}
+
+.main-title {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 10vw, 8rem);
   line-height: 1;
-  transition: transform var(--dur) var(--ease-out);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
-.mobile-menu__link:hover {
-  transform: translateX(8px);
+.subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.mobile-menu__num {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--fg-soft);
-  font-weight: 400;
+.subtitle {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  white-space: nowrap;
 }
 
-.mobile-menu__text {
-  flex: 1;
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--black);
 }

@@ -1,28 +1,28 @@
 import React from 'react';
 import { ACHIEVEMENTS } from '../data/portfolioData.js';
+import '../styles/achievements.css';
+import { FaTrophy } from 'react-icons/fa';
 
 function Achievements() {
   return (
-    <section className="achievements" aria-label="Achievements">
-      <div className="section__header">
-        <div className="section__label">
-          <span className="section__label-mark">Statistics</span>
-          <span className="section__label-num">§ 06</span>
+    <section id="achievements" className="newspaper-section achievements-section">
+      <div className="section-content">
+        <h2 className="bottom-block-title">ACHIEVEMENTS</h2>
+        
+        <div className="achievements-list">
+          {ACHIEVEMENTS.slice(0, 2).map((ach, idx) => (
+            <div key={idx} className="achievement-item">
+              <div className="achievement-icon">
+                {idx === 0 ? <FaTrophy /> : <div style={{fontWeight: 'bold', fontFamily: 'var(--serif)'}}>NSUT</div>}
+              </div>
+              <div className="achievement-text">
+                <span className="achievement-title">{ach.title}</span>
+                <span className="achievement-stat">{ach.stat}</span>
+                <p className="achievement-detail">{ach.detail}</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <h2 className="section__title">
-          By the <em>Numbers</em>
-        </h2>
-      </div>
-
-      <div className="achievements__grid">
-        {ACHIEVEMENTS.map((item) => (
-          <article key={item.number} className="achievement">
-            <div className="achievement__num">{item.number}</div>
-            <div className="achievement__stat">{item.stat}</div>
-            <h3 className="achievement__title">{item.title}</h3>
-            <p className="achievement__detail">{item.detail}</p>
-          </article>
-        ))}
       </div>
     </section>
   );

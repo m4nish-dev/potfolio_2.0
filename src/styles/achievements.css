@@ -1,97 +1,58 @@
-/* ============================================================================
-   ACHIEVEMENTS — Statistics
-   ============================================================================ */
-.achievements {
-  background: var(--ink);
-  color: var(--paper);
-  border-bottom: 1px solid var(--rule);
+/* achievements.css */
+
+.achievements-section {
+  padding: 0; /* padding handled by parent grid in App.jsx usually, or adjust here */
 }
 
-.achievements .section__header {
-  border-top-color: var(--paper);
+.bottom-block-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  border-bottom: var(--border-thin);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.achievements .section__label {
-  color: var(--silver);
-}
-
-.achievements .section__label-mark::before {
-  background: var(--paper);
-}
-
-.achievements .section__label-num {
-  color: var(--silver);
-}
-
-.achievements .section__title {
-  color: var(--paper);
-}
-
-.achievements .section__title em {
-  color: var(--silver);
-}
-
-.achievements__grid {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--paper);
-}
-
-.achievement {
-  padding: var(--space-lg) var(--space-md);
-  border-right: 1px solid rgba(245, 245, 240, 0.2);
+.achievements-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  min-height: 280px;
-  transition: background var(--dur) var(--ease);
+  gap: 1.5rem;
 }
 
-.achievement:last-child {
-  border-right: none;
+.achievement-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
-.achievement:hover {
-  background: rgba(245, 245, 240, 0.03);
+.achievement-icon {
+  font-size: 2rem;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
 }
 
-.achievement__num {
-  font-family: var(--mono);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.15em;
-  color: var(--silver);
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(245, 245, 240, 0.2);
-  width: 100%;
+.achievement-text {
+  display: flex;
+  flex-direction: column;
 }
 
-.achievement__stat {
-  font-family: var(--serif);
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  font-weight: 500;
-  line-height: 1;
-  color: var(--paper);
-  letter-spacing: -0.03em;
-  font-style: italic;
-}
-
-.achievement__title {
+.achievement-title {
   font-family: var(--sans);
-  font-size: var(--fs-small);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--paper);
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 0.95rem;
 }
 
-.achievement__detail {
-  font-family: var(--serif);
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--silver);
-  margin-top: auto;
+.achievement-stat {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+}
+
+.achievement-detail {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-top: 0.25rem;
 }

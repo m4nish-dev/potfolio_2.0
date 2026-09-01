@@ -1,27 +1,26 @@
 import React from 'react';
 import { CERTIFICATIONS } from '../data/portfolioData.js';
+import '../styles/certifications.css';
+import { FaCertificate } from 'react-icons/fa';
 
 function Certifications() {
   return (
-    <section className="certs" aria-label="Certifications">
-      <div className="section__header">
-        <div className="section__label">
-          <span className="section__label-mark">Certifications</span>
-          <span className="section__label-num">§ 07</span>
+    <section id="certifications" className="newspaper-section certifications-section">
+      <div className="section-content">
+        <h2 className="bottom-block-title">CERTIFICATIONS</h2>
+        
+        <div className="certifications-row">
+          {CERTIFICATIONS.map((cert, idx) => (
+            <div key={idx} className="cert-item">
+              <div className="cert-badge">
+                <FaCertificate className="cert-icon" />
+              </div>
+              <span className="cert-title">{cert.title.split(' ').map((word, i) => (
+                <React.Fragment key={i}>{word}<br/></React.Fragment>
+              ))}</span>
+            </div>
+          ))}
         </div>
-        <h2 className="section__title">
-          Course <em>Records</em>
-        </h2>
-      </div>
-
-      <div className="certs__grid">
-        {CERTIFICATIONS.map((cert) => (
-          <article key={cert.number} className="cert">
-            <div className="cert__num">{cert.number}</div>
-            <h3 className="cert__title">{cert.title}</h3>
-            <p className="cert__issuer">{cert.issuer}</p>
-          </article>
-        ))}
       </div>
     </section>
   );

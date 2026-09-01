@@ -1,61 +1,33 @@
 import React from 'react';
 import { EXPERIENCE } from '../data/portfolioData.js';
+import '../styles/experience.css';
 
 function Experience() {
   return (
-    <section id="experience" className="experience" aria-label="Experience">
-      <div className="section__header">
-        <div className="section__label">
-          <span className="section__label-mark">Field Work</span>
-          <span className="section__label-num">§ 03</span>
-        </div>
-        <h2 className="section__title">
-          On the <em>Job</em>
-        </h2>
-        <p className="section__standfirst">
-          A record of shipped work — where the reading meets the writing of
-          real, running software.
-        </p>
-      </div>
+    <section id="experience" className="newspaper-section experience-section">
+      <div className="section-content">
+        <span className="section-header">FIELD WORK</span>
+        <h2 className="section-title">EXPERIENCE</h2>
 
-      <div className="experience__list">
-        {EXPERIENCE.map((job) => (
-          <article key={job.number} className="job">
-            <header className="job__header">
-              <div className="job__meta">
-                <span className="job__num">{job.number}</span>
-                <span className="job__period">{job.period}</span>
+        <div className="experience-list">
+          {EXPERIENCE.map((job) => (
+            <article key={job.number} className="job-card">
+              <div className="job-header">
+                <h3 className="job-role">{job.role}</h3>
+                <span className="job-company">{job.company}</span>
               </div>
+              <p className="job-period-dept">{job.period} &bull; {job.department}</p>
+              
+              <p className="job-dispatch">{job.dispatch}</p>
 
-              <div className="job__title-block">
-                <h3 className="job__role">{job.role}</h3>
-                <div className="job__company">
-                  <span className="job__company-name">{job.company}</span>
-                  <span className="job__company-sep">—</span>
-                  <span className="job__company-dept">{job.department}</span>
-                </div>
-              </div>
-            </header>
-
-            <div className="job__body">
-              <p className="job__dispatch">
-                <span className="job__dispatch-label">Dispatch —</span>
-                {job.dispatch}
-              </p>
-
-              <ol className="job__list">
+              <ul className="job-achievements">
                 {job.achievements.map((line, i) => (
-                  <li key={i} className="job__item">
-                    <span className="job__item-num">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span className="job__item-text">{line}</span>
-                  </li>
+                  <li key={i}>{line}</li>
                 ))}
-              </ol>
-            </div>
-          </article>
-        ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

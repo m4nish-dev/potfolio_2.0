@@ -1,165 +1,63 @@
-/* ============================================================================
-   EXPERIENCE — Field Work
-   ============================================================================ */
-.experience {
-  background: var(--bg);
-  border-bottom: 1px solid var(--rule);
+/* experience.css */
+
+.experience-section {
+  padding: 1.5rem;
 }
 
-.experience__list {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
+.job-card {
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: var(--border-light);
+}
+
+.job-card:last-child {
+  border-bottom: none;
+}
+
+.job-header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2xl);
+  margin-bottom: 0.25rem;
 }
 
-.job {
-  display: grid;
-  grid-template-columns: 4fr 8fr;
-  gap: var(--space-xl);
-  align-items: start;
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--rule);
-}
-
-/* --- Header column (left) --- */
-.job__header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  position: sticky;
-  top: 4.5rem;
-}
-
-.job__meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.job__num {
+.job-role {
   font-family: var(--serif);
-  font-size: clamp(4rem, 8vw, 6.5rem);
-  font-weight: 500;
-  line-height: 0.85;
-  color: var(--ink);
-  letter-spacing: -0.04em;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
-.job__period {
-  font-family: var(--mono);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.15em;
+.job-company {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: bold;
   text-transform: uppercase;
-  color: var(--fg-soft);
+  color: var(--dark-gray);
 }
 
-.job__title-block {
+.job-period-dept {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--gray);
+  padding-bottom: 0.5rem;
+}
+
+.job-dispatch {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.job-achievements {
+  list-style: square;
+  padding-left: 1.2rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--dark-gray);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--rule-soft);
-}
-
-.job__role {
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 2.4vw, 1.875rem);
-  font-weight: 500;
-  line-height: 1.1;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-}
-
-.job__company {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  font-family: var(--sans);
-  font-size: var(--fs-small);
-  letter-spacing: 0.05em;
-  color: var(--fg-muted);
-  font-weight: 500;
-}
-
-.job__company-name {
-  color: var(--ink);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-}
-
-.job__company-sep {
-  color: var(--fg-soft);
-}
-
-.job__company-dept {
-  font-style: italic;
-  font-family: var(--serif);
-  text-transform: none;
-  color: var(--slate);
-  font-size: 0.9375rem;
-  letter-spacing: 0;
-}
-
-/* --- Body column --- */
-.job__body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.job__dispatch {
-  font-family: var(--serif);
-  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
-  line-height: 1.45;
-  color: var(--graphite);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--rule-soft);
-}
-
-.job__dispatch-label {
-  font-family: var(--sans);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink);
-  font-weight: 600;
-  margin-right: 0.5rem;
-  vertical-align: baseline;
-}
-
-.job__list {
-  display: flex;
-  flex-direction: column;
-}
-
-.job__item {
-  display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--rule-hair);
-  align-items: baseline;
-  transition: padding-left var(--dur) var(--ease);
-}
-
-.job__item:hover {
-  padding-left: 0.5rem;
-}
-
-.job__item-num {
-  font-family: var(--mono);
-  font-size: var(--fs-xs);
-  color: var(--fg-soft);
-  letter-spacing: 0.05em;
-}
-
-.job__item-text {
-  font-family: var(--sans);
-  font-size: var(--fs-body);
-  line-height: 1.55;
-  color: var(--ink);
 }

@@ -58,8 +58,12 @@
 }
 
 .company-logo {
-  height: 35px;
+  height: 28px;
+  width: auto;
   object-fit: contain;
+  margin-right: 1rem;
+  vertical-align: middle;
+  filter: grayscale(100%);
 }
 
 .job-role {

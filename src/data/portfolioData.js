@@ -17,8 +17,8 @@ export const PROFILE = {
 
 export const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'About', href: '#about' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' }
@@ -77,7 +77,7 @@ export const PROJECTS = [
       'Secure, role-based access and authentication'
     ],
     stack: ['React', 'Node.js', 'LLMs', 'MongoDB', 'AI Agents'],
-    image: '/images/hero_tech.jpg', // Placeholder since there is no specific AILifeOS image yet
+    image: '/images/ailifeos.png', 
     imageAlt: 'AILifeOS Interface',
     liveUrl: '#',
     codeUrl: '#'
@@ -95,7 +95,7 @@ export const PROJECTS = [
       'Responsive, mobile-first design system'
     ],
     stack: ['MongoDB', 'Express', 'React', 'Node.js'],
-    image: '/images/homely.jpg',
+    image: '/images/homely_new.png',
     imageAlt: 'Homily booking platform interface',
     liveUrl: '#',
     codeUrl: '#'

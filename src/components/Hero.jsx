@@ -8,8 +8,8 @@ function Hero() {
     <section id="home" className="hero-section">
       <div className="hero-image-container">
         <img 
-          src="/images/hero_tech.jpg" 
-          alt="Software Engineering Concept" 
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" 
+          alt="Software Engineering Workspace" 
           className="hero-image-editorial"
         />
         <div className="hero-overlay">

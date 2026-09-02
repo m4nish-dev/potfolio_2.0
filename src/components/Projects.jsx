@@ -46,7 +46,6 @@ function Projects() {
                   src={project2.image} 
                   alt={project2.title} 
                   className="project-image"
-                  style={{ aspectRatio: '3/4' }}
                 />
               </div>
               <h4 className="project-sub-headline">

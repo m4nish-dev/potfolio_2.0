@@ -8,8 +8,8 @@ function Hero() {
     <section id="home" className="hero-section">
       <div className="hero-image-container">
         <img 
-          src="/images/hero_cyberpunk_face.jpg" 
-          alt="Cybernetic Developer Portrait" 
+          src="/images/hero_cyberpunk.jpg" 
+          alt="Cyberpunk Editorial" 
           className="hero-image-editorial"
         />
         <div className="hero-overlay">

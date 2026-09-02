@@ -8,8 +8,8 @@ function Hero() {
     <section id="home" className="hero-section">
       <div className="hero-image-container">
         <img 
-          src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=100&w=2500&auto=format&fit=crop" 
-          alt="Cinematic Astronaut Editorial" 
+          src="/images/hero_final.jpg" 
+          alt="Cinematic Wide Angle Developer Hologram" 
           className="hero-image-editorial"
         />
         <div className="hero-overlay">

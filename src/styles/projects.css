@@ -47,8 +47,8 @@
 
 .project-image {
   width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
+  height: auto;
+  display: block;
   filter: grayscale(100%);
   border: var(--border-thin);
 }

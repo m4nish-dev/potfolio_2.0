@@ -48,16 +48,14 @@ export const EXPERIENCE = [
     number: '01',
     role: 'Software Engineer Intern',
     company: 'Encore Ascend',
-    period: 'Recent',
+    period: 'July 2026 – August 2026',
     department: 'Product Engineering',
     dispatch:
-      'Built and shipped production-grade interfaces in a fast-moving product team, translating design specifications into reusable, tested components.',
+      'Redesigned and enhanced the company website using Next.js, and developed a public resource library with Express.js REST APIs.',
     achievements: [
-      'Developed 8+ responsive web pages using React.js, JavaScript, and modern CSS.',
-      'Built 15+ reusable React components adopted across the product surface.',
-      'Integrated 10+ REST APIs on the MERN stack, wiring frontend flows to backend services.',
-      'Collaborated with a 5-member team on a shared Git/GitHub workflow, including code review.',
-      'Implemented interactive animations with Framer Motion to elevate user experience.'
+      'Redesigned and enhanced the company website using Next.js, translating Figma designs into responsive, reusable components while following frontend best practices such as component-driven architecture, dynamic imports, and code splitting.',
+      'Developed a public resource library with search, filtering, pagination, and downloads, enabling users to efficiently discover and access company resources; built supporting Express.js REST APIs for resource management and delivery.',
+      'Implemented server-side rendering (SSR) for content-driven pages to improve SEO and search-engine crawlability, and integrated Firebase Authentication for secure user authentication and access management.'
     ]
   }
 ];

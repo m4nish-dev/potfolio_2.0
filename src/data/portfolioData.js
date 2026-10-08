@@ -64,8 +64,7 @@ export const PROJECTS = [
   {
     number: '01',
     title: 'AILifeOS',
-    subtitle: 'AI-Powered
-Productivity Platform',
+    subtitle: 'AI-Powered\nProductivity Platform',
     kicker: 'MERN / GROQ LLM',
     dispatch:
       'Built a full-stack MERN productivity platform with 30+ RESTful APIs across 11 modules covering tasks, goals, calendar, notes, study sessions, flashcards, analytics, and AI-powered features.',
@@ -84,8 +83,7 @@ Productivity Platform',
   {
     number: '02',
     title: 'Homely',
-    subtitle: 'Vacation Rental
-Booking Platform',
+    subtitle: 'Vacation Rental\nBooking Platform',
     kicker: 'MERN / RAZORPAY',
     dispatch:
       'Architected a scalable MERN platform with 44+ REST APIs across 7 domains, using MVC architecture, Swagger/OpenAPI documentation, and centralized error handling.',

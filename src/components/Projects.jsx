@@ -24,8 +24,7 @@ function Projects() {
                 />
               </div>
               <h3 className="project-headline" style={{ fontSize: '1.8rem', marginTop: '1rem' }}>
-                {project1.title.toUpperCase()}: {project1.subtitle.replace('
-', ' ').toUpperCase()}
+                {project1.title.toUpperCase()}: {project1.subtitle.replace('\n', ' ').toUpperCase()}
               </h3>
               <p className="project-description">{project1.dispatch}</p>
               
@@ -56,8 +55,7 @@ function Projects() {
                 />
               </div>
               <h3 className="project-headline" style={{ fontSize: '1.8rem', marginTop: '1rem' }}>
-                {project2.title.toUpperCase()}: {project2.subtitle.replace('
-', ' ').toUpperCase()}
+                {project2.title.toUpperCase()}: {project2.subtitle.replace('\n', ' ').toUpperCase()}
               </h3>
               <p className="project-description">{project2.dispatch}</p>
 

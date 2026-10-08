@@ -64,38 +64,42 @@ export const PROJECTS = [
   {
     number: '01',
     title: 'AILifeOS',
-    subtitle: 'The Ultimate\nOperating System',
-    kicker: 'AI / FULL-STACK',
+    subtitle: 'AI-Powered
+Productivity Platform',
+    kicker: 'MERN / GROQ LLM',
     dispatch:
-      'An advanced AI-driven life operating system designed to streamline workflows, manage data, and automate daily tasks using intelligent agents and large language models.',
+      'Built a full-stack MERN productivity platform with 30+ RESTful APIs across 11 modules covering tasks, goals, calendar, notes, study sessions, flashcards, analytics, and AI-powered features.',
     features: [
-      'Multi-agent workflow orchestration using LLMs',
-      'Real-time data synchronization and persistence',
-      'Customized dashboard with dynamic widgets',
-      'Secure, role-based access and authentication'
+      'Integrated the gpt-oss-20b model via Groq to deliver context-aware chat, goal-roadmap generation, note summarization, and quiz generation.',
+      'Used structured JSON outputs and dynamic context aggregated from 7 MongoDB collections.',
+      'Implemented JWT authentication, bcryptjs hashing, and resource ownership checks across 10 data models.',
+      'Built a React SPA with Context API, Axios interceptors, keyboard shortcuts, and PDF ingestion.'
     ],
-    stack: ['React', 'Node.js', 'LLMs', 'MongoDB', 'AI Agents'],
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Groq LLM'],
     image: '/images/ailifeos.png', 
     imageAlt: 'AILifeOS Interface',
-    liveUrl: '#',
+    liveUrl: 'https://ai-life-os-lovat.vercel.app/',
     codeUrl: '#'
   },
   {
     number: '02',
-    title: 'Homily',
-    subtitle: 'A Premium\nBooking Platform',
-    kicker: 'FULL-STACK / MERN',
+    title: 'Homely',
+    subtitle: 'Vacation Rental
+Booking Platform',
+    kicker: 'MERN / RAZORPAY',
     dispatch:
-      'A complete property booking experience built on the MERN stack. A fluid interface backed by authenticated REST APIs and a responsive layout system.',
+      'Architected a scalable MERN platform with 44+ REST APIs across 7 domains, using MVC architecture, Swagger/OpenAPI documentation, and centralized error handling.',
     features: [
-      'End-to-end property search and booking engine',
-      'Secure payment gateway integration',
-      'Responsive, mobile-first design system'
+      'Prevented double-booking race conditions using MongoDB ACID transactions and interval-overlap validation.',
+      'Optimized search with 5 compound/text indexes for sub-100ms query performance.',
+      'Implemented JWT authentication and RBAC for Guest/Host/Admin roles, with rate limiting and Helmet CSP.',
+      'Integrated Razorpay payments with HMAC-SHA256 signature verification and idempotent webhooks.',
+      'Deployed the application using Vercel serverless functions and Cloudinary CDN.'
     ],
-    stack: ['MongoDB', 'Express', 'React', 'Node.js'],
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'Cloudinary'],
     image: '/images/homely_new.png',
-    imageAlt: 'Homily booking platform interface',
-    liveUrl: '#',
+    imageAlt: 'Homely booking platform interface',
+    liveUrl: 'https://homely-gilt.vercel.app/',
     codeUrl: '#'
   }
 ];

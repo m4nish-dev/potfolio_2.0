@@ -32,7 +32,7 @@ function Hero() {
 
             <div className="hero-actions">
               <a href="#contact" className="hero-btn hero-btn-primary">Contact me</a>
-              <a href="https://cartoon-portfolio-rose.vercel.app/resume.pdf" target="_blank" rel="noreferrer" className="hero-btn hero-btn-secondary">Resume</a>
+              <a href="/Manish_Kumar_Resume.pdf" target="_blank" rel="noreferrer" className="hero-btn hero-btn-secondary">Resume</a>
             </div>
 
             <div className="hero-tech-stack">

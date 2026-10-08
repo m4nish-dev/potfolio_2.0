@@ -13,9 +13,9 @@ function Projects() {
         <h2 className="section-title">PROJECT FOCUS</h2>
 
         <div className="projects-split-container">
-          {/* First Project: AILifeOS (60%) */}
+          {/* First Project: AILifeOS (50%) */}
           {project1 && (
-            <div className="project-block project-60">
+            <div className="project-block project-50" style={{ flex: 1, paddingRight: '1.5rem', borderRight: 'var(--border-thin)' }}>
               <div className="project-image-wrapper">
                 <img 
                   src={project1.image} 
@@ -23,8 +23,9 @@ function Projects() {
                   className="project-image"
                 />
               </div>
-              <h3 className="project-headline">
-                {project1.title.toUpperCase()}: {project1.subtitle.replace('\n', ' ').toUpperCase()}
+              <h3 className="project-headline" style={{ fontSize: '1.8rem', marginTop: '1rem' }}>
+                {project1.title.toUpperCase()}: {project1.subtitle.replace('
+', ' ').toUpperCase()}
               </h3>
               <p className="project-description">{project1.dispatch}</p>
               
@@ -35,12 +36,18 @@ function Projects() {
                   ))}
                 </ul>
               )}
+              
+              {project1.liveUrl && project1.liveUrl !== '#' && (
+                <a href={project1.liveUrl} target="_blank" rel="noreferrer" style={{ marginTop: '1rem', display: 'inline-block', fontWeight: 'bold', textDecoration: 'underline', color: 'var(--black)' }}>
+                  VISIT LIVE SITE ↗
+                </a>
+              )}
             </div>
           )}
 
-          {/* Second Project: Homily (40%) */}
+          {/* Second Project: Homely (50%) */}
           {project2 && (
-            <div className="project-block project-40">
+            <div className="project-block project-50" style={{ flex: 1, paddingLeft: '1.5rem' }}>
               <div className="project-image-wrapper">
                 <img 
                   src={project2.image} 
@@ -48,10 +55,10 @@ function Projects() {
                   className="project-image"
                 />
               </div>
-              <h4 className="project-sub-headline">
-                {project2.title.toUpperCase()}:<br/>
-                {project2.subtitle.replace('\n', ' ').toUpperCase()}
-              </h4>
+              <h3 className="project-headline" style={{ fontSize: '1.8rem', marginTop: '1rem' }}>
+                {project2.title.toUpperCase()}: {project2.subtitle.replace('
+', ' ').toUpperCase()}
+              </h3>
               <p className="project-description">{project2.dispatch}</p>
 
               {project2.features && (
@@ -60,6 +67,12 @@ function Projects() {
                     <li key={i}>{feature}</li>
                   ))}
                 </ul>
+              )}
+              
+              {project2.liveUrl && project2.liveUrl !== '#' && (
+                <a href={project2.liveUrl} target="_blank" rel="noreferrer" style={{ marginTop: '1rem', display: 'inline-block', fontWeight: 'bold', textDecoration: 'underline', color: 'var(--black)' }}>
+                  VISIT LIVE SITE ↗
+                </a>
               )}
             </div>
           )}
